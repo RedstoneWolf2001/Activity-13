@@ -27,7 +27,7 @@ namespace Activity_13
 
         private void NewGameBTN_Click(object sender, EventArgs e)
         {
-            
+
             int[][] array = //Set up Array
             {
                 new int[] { 0, 0, 0 },
@@ -39,41 +39,42 @@ namespace Activity_13
                 for (int j = 0; j < array[i].Length; j++)
                     array[i][j] = random.Next(2);
 
-            TopLeft.Text = array[0][0].ToString();
-            TopCenter.Text = array[0][1].ToString();
-            TopRight.Text = array[0][2].ToString();
+            TopLeft.Text = ToText(array[0][0]);
+            TopCenter.Text = ToText(array[0][1]);
+            TopRight.Text = ToText(array[0][2]);
 
-            MiddleLeft.Text = array[1][0].ToString();
-            MiddleCenter.Text = array[1][1].ToString();
-            MiddleRight.Text = array[1][2].ToString();
+            MiddleLeft.Text = ToText(array[1][0]);
+            MiddleCenter.Text = ToText(array[1][1]);
+            MiddleRight.Text = ToText(array[1][2]);
 
-            BottomLeft.Text = array[2][0].ToString();
-            BottomCenter.Text = array[2][1].ToString();
-            BottomRight.Text = array[2][2].ToString();
+            BottomLeft.Text = ToText(array[2][0]);
+            BottomCenter.Text = ToText(array[2][1]);
+            BottomRight.Text = ToText(array[2][2]);
+                       
 
             string win = ""; //Determining Connections
 
             if (array[0][0] == array[0][1] && array[0][1] == array[0][2])
                 win += array[0][0].ToString();
-            
+
             if (array[1][0] == array[1][1] && array[1][1] == array[1][2])
                 win += array[1][0].ToString();
-            
+
             if (array[2][0] == array[2][1] && array[2][1] == array[2][2])
                 win += array[2][0].ToString();
-            
+
             if (array[0][0] == array[1][0] && array[1][0] == array[2][0])
                 win += array[0][0].ToString();
-            
+
             if (array[0][1] == array[1][1] && array[1][1] == array[2][1])
                 win += array[0][1].ToString();
-            
+
             if (array[0][2] == array[1][2] && array[1][2] == array[2][2])
                 win += array[0][2].ToString();
-            
+
             if (array[0][0] == array[1][1] && array[1][1] == array[2][2])
                 win += array[0][0].ToString();
-            
+
             if (array[2][0] == array[1][1] && array[1][1] == array[0][2])
                 win += array[2][0].ToString();
 
@@ -81,15 +82,24 @@ namespace Activity_13
             int Owin = 0;
             char[] winChar = win.ToCharArray();
             for (int i = 0; i < winChar.Length; i++)
-                
+                switch (int.Parse(winChar[i].ToString()))
+                {
+                    case 0:
+                        Owin++;
+                        break;
+                    case 1:
+                        Xwin++;
+                        break;
+                }
 
-
-
-
-            ResultsTB.Text = win;
-
-
-
+            if (Xwin == 0 && Owin == 0)
+                ResultsTB.Text = "No Winner!";
+            else if (Xwin > Owin)
+                ResultsTB.Text = "X Wins!";
+            else if (Owin > Xwin)
+                ResultsTB.Text = "O Wins!";
+            else if (Xwin == Owin)
+                ResultsTB.Text = "It's a Draw!";
 
         }
 
@@ -97,5 +107,17 @@ namespace Activity_13
         {
             Close();
         }
+
+        public string ToText(int input) //Ease of use for the conversion to X and O
+        {
+            if (input == 0)
+                return "O";
+            else if (input == 1)
+                return "X";
+            else
+                return "";
+        }
+
+
     }
 }

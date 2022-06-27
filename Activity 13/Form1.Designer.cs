@@ -156,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(229, 248);
+            this.ClientSize = new System.Drawing.Size(232, 248);
             this.Controls.Add(this.CloseBTN);
             this.Controls.Add(this.NewGameBTN);
             this.Controls.Add(this.ResultsTB);
