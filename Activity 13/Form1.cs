@@ -24,16 +24,17 @@ namespace Activity_13
         }
 
         private static Random random = new Random();
-
-        private void NewGameBTN_Click(object sender, EventArgs e)
-        {
-
-            int[][] array = //Set up Array
+        public static int[][] array = //Set up Array
             {
                 new int[] { 0, 0, 0 },
                 new int[] { 0, 0, 0 },
                 new int[] { 0, 0, 0 }
             };
+
+        private void NewGameBTN_Click(object sender, EventArgs e)
+        {
+
+
 
             for (int i = 0; i < array.Length; i++) //Fill array with random
                 for (int j = 0; j < array[i].Length; j++)
@@ -81,7 +82,8 @@ namespace Activity_13
             int Xwin = 0;
             int Owin = 0;
             char[] winChar = win.ToCharArray();
-            for (int i = 0; i < winChar.Length; i++)
+
+            for (int i = 0; i < winChar.Length; i++) //Determining results
                 switch (int.Parse(winChar[i].ToString()))
                 {
                     case 0:
@@ -92,7 +94,7 @@ namespace Activity_13
                         break;
                 }
 
-            if (Xwin == 0 && Owin == 0)
+            if (Xwin == 0 && Owin == 0) //Outputting results
                 ResultsTB.Text = "No Winner!";
             else if (Xwin > Owin)
                 ResultsTB.Text = "X Wins!";
