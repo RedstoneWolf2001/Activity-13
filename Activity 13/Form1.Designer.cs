@@ -44,7 +44,6 @@
             // 
             // TopLeft
             // 
-            this.TopLeft.Enabled = false;
             this.TopLeft.Location = new System.Drawing.Point(31, 12);
             this.TopLeft.Name = "TopLeft";
             this.TopLeft.Size = new System.Drawing.Size(50, 50);
@@ -53,7 +52,6 @@
             // 
             // TopCenter
             // 
-            this.TopCenter.Enabled = false;
             this.TopCenter.Location = new System.Drawing.Point(87, 12);
             this.TopCenter.Name = "TopCenter";
             this.TopCenter.Size = new System.Drawing.Size(50, 50);
@@ -62,7 +60,6 @@
             // 
             // TopRight
             // 
-            this.TopRight.Enabled = false;
             this.TopRight.Location = new System.Drawing.Point(143, 12);
             this.TopRight.Name = "TopRight";
             this.TopRight.Size = new System.Drawing.Size(50, 50);
@@ -71,7 +68,6 @@
             // 
             // MiddleLeft
             // 
-            this.MiddleLeft.Enabled = false;
             this.MiddleLeft.Location = new System.Drawing.Point(31, 68);
             this.MiddleLeft.Name = "MiddleLeft";
             this.MiddleLeft.Size = new System.Drawing.Size(50, 50);
@@ -80,7 +76,6 @@
             // 
             // MiddleCenter
             // 
-            this.MiddleCenter.Enabled = false;
             this.MiddleCenter.Location = new System.Drawing.Point(87, 68);
             this.MiddleCenter.Name = "MiddleCenter";
             this.MiddleCenter.Size = new System.Drawing.Size(50, 50);
@@ -89,7 +84,6 @@
             // 
             // MiddleRight
             // 
-            this.MiddleRight.Enabled = false;
             this.MiddleRight.Location = new System.Drawing.Point(143, 68);
             this.MiddleRight.Name = "MiddleRight";
             this.MiddleRight.Size = new System.Drawing.Size(50, 50);
@@ -98,7 +92,6 @@
             // 
             // BottomLeft
             // 
-            this.BottomLeft.Enabled = false;
             this.BottomLeft.Location = new System.Drawing.Point(31, 124);
             this.BottomLeft.Name = "BottomLeft";
             this.BottomLeft.Size = new System.Drawing.Size(50, 50);
@@ -107,7 +100,6 @@
             // 
             // BottomCenter
             // 
-            this.BottomCenter.Enabled = false;
             this.BottomCenter.Location = new System.Drawing.Point(87, 124);
             this.BottomCenter.Name = "BottomCenter";
             this.BottomCenter.Size = new System.Drawing.Size(50, 50);
@@ -116,7 +108,6 @@
             // 
             // BottomRight
             // 
-            this.BottomRight.Enabled = false;
             this.BottomRight.Location = new System.Drawing.Point(143, 124);
             this.BottomRight.Name = "BottomRight";
             this.BottomRight.Size = new System.Drawing.Size(50, 50);
@@ -125,9 +116,9 @@
             // 
             // ResultsTB
             // 
-            this.ResultsTB.Enabled = false;
             this.ResultsTB.Location = new System.Drawing.Point(31, 181);
             this.ResultsTB.Name = "ResultsTB";
+            this.ResultsTB.ReadOnly = true;
             this.ResultsTB.Size = new System.Drawing.Size(162, 20);
             this.ResultsTB.TabIndex = 9;
             this.ResultsTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

@@ -24,21 +24,24 @@ namespace Activity_13
         }
 
         private static Random random = new Random();
-        public static int[][] array = //Set up Array
+
+
+        private void NewGameBTN_Click(object sender, EventArgs e)
+        {
+            int[][] array = //Set up Array
             {
                 new int[] { 0, 0, 0 },
                 new int[] { 0, 0, 0 },
                 new int[] { 0, 0, 0 }
             };
 
-        private void NewGameBTN_Click(object sender, EventArgs e)
-        {
-
-
-
+            
             for (int i = 0; i < array.Length; i++) //Fill array with random
                 for (int j = 0; j < array[i].Length; j++)
                     array[i][j] = random.Next(2);
+            
+
+            //array = FillArray();         // ATTN: Uncomment this for conventional board fill.
 
             TopLeft.Text = ToText(array[0][0]);
             TopCenter.Text = ToText(array[0][1]);
@@ -120,6 +123,43 @@ namespace Activity_13
                 return "";
         }
 
+        public int[][] FillArray()
+        {
+            int[] array = { -1, -1, -1, -1, -1, -1, -1, -1, -1 };
 
+            int XorO = 1;
+            int total = 0;
+
+            while (total < 9)
+            {
+                int rand = random.Next(9);
+                if (array[rand] == -1)
+                {
+                    array[rand] = XorO;
+                    XorO = Flip(XorO);
+                    total++;
+                }
+            }
+
+            int[][] output =
+            {
+                new int[] { array[0], array[1], array[2] },
+                new int[] { array[3], array[4], array[5] },
+                new int[] { array[6], array[7], array[8] },
+
+            };
+
+            return output;
+        }
+
+        public int Flip(int flip)
+        {
+            if (flip == 1)
+                return 0;
+            else if (flip == 0)
+                return 1;
+            else 
+                return -1;
+        }
     }
 }
